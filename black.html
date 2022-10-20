@@ -1,0 +1,591 @@
+<html>
+    <head>
+        <title>베테랑스 어학원 Digital SAT</title>
+
+<head>
+        
+        <meta charset="utf-8">
+        <title>베테랑스 Digital SAT</title>
+        <link href="https://shiningrockforyou.github.io/veteransfavicon.ico" rel="shortcut icon" type="image/x-icon">
+        <meta name="viewport" content="width=device-width">
+        <base href="https://www.flexiquiz.com">
+
+
+    <style>
+        .btn {
+            background-image: none !important;
+            border: none !important;
+            text-shadow: none !important;
+            padding: 7px 14px !important;
+        }
+
+        .btn-default {
+            background-color: #f0f0f0 !important;
+        }
+    </style>
+    <style>
+        @font-face {
+    font-family: "DroidSerif";
+    font-style: normal;
+    font-weight: normal;
+src: url("https://shiningrockforyou.github.io/droid-serif-fontfacekit/droidserif-regular.woff") format("woff");
+}
+@font-face {
+    font-family: "DroidSerif";
+    font-style: normal;
+    font-weight: bold;
+    src: url("https://shiningrockforyou.github.io/droid-serif-fontfacekit/droidserif-bold.woff") format("woff");
+}
+@font-face {
+    font-family: "DroidSerif";
+    font-style: italic;
+    font-weight: normal;
+    src: url("https://shiningrockforyou.github.io/droid-serif-fontfacekit/droidserif-italic.woff") format("woff");
+}
+@font-face {
+    font-family: "DroidSerif";
+    font-style: italic;
+    font-weight: bold;
+    src: url("https://shiningrockforyou.github.io/droid-serif-fontfacekit/droidserif-bolditalic.woff") format("woff");
+}
+
+
+.pageText {
+  float: left;
+  width: 45%;
+}
+.pageQuestions {
+  float: right;
+  width: 55%;
+  border-left: #dddddd 0px solid;
+overflow-y: auto;
+height: 600px !important;
+}
+/*.questionOptions { border-left: #dddddd 0px solid; }*/
+
+.row.surveyEditorQuestion {
+  border: 0px solid #2e2e2e;
+  margin: 0px;
+  padding: 0px;
+}
+
+.btn-default {
+  background-color: #2e2e2e !important;
+  color: white !important;
+  display: inline-flex !important;
+border: 2px solid #2e2e2e !important;
+  border-radius: 50%;
+  width: 220px;
+  height: 60px;
+  font-size: 18pt !important;
+  justify-content: center !important;
+  align-items: center !important;
+transition-duration: 0s;
+}
+
+.highlight {
+  background-color: yellow;
+}
+.pageText::-moz-selection {
+  /* Code for Firefox */
+
+  background: yellow;
+}
+
+.pageText::selection {
+  background: yellow;
+}
+
+.questionOptions input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.questionOptions label {
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 15px;
+width: 100%;
+transition-duration: 1s;
+  }
+
+label.checkedlabel {
+  background-color: #ddd;
+  border-color: #2e2e2e;
+  color: #2e2e2e;
+}
+
+.questionOptions input[type="radio"]:focus {
+  border: 2px dashed #444;
+}
+
+.questionOptions label:hover {
+  background-color: #ddd;
+  color: #2e2e2e;
+}
+
+
+
+table,
+th,
+td {
+  border: 0px solid;
+}
+
+th:nth-child(1) {
+  width: 0%;
+}
+
+th:nth-child(2) {
+  width: 100;
+}
+
+.circle {
+  background: #2e2e2e;
+  border-radius: 50%;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  padding: 2px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.text {
+  font-family: "DroidSerif", "Roboto Serif", Georgia, serif;
+  font-weight: 100;
+  position: relative;
+  padding: 10px;
+  font-size: 14pt;
+  color: #2e2e2e;
+  text-align: left;
+}
+
+.numbering {
+  background: #1E1E1E;
+  color: white;
+}
+
+.numbershade {
+  width: 100%;
+  background: #F0F0F0;
+  color: #1e1e1e;
+  font-family: "DroidSerif", "Roboto Serif", Georgia, serif;
+  font-weight: 100;
+  text-align: left !important;
+} 
+
+#numberrow {
+  padding: 10px;
+  border-collapse: collapse;
+  font-family: "DroidSerif", "Roboto Serif", Georgia, serif;
+  font-size: 18pt !important;
+    font-size: 18pt !important;
+    box-shadow: inset 0 0 0 15px #1e1e1e;
+}
+
+#numberspace {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "DroidSerif", "Roboto Serif", Georgia, Serif;
+  font-size: 18pt !important;
+    padding: 10px;
+    box-shadow: inset 0 0 0 15px #f0f0f0;
+}
+
+.testPassage {
+  font-family: "DroidSerif", "Roboto Serif", Georgia, serif;
+  font-weight: 100;
+  font-size: 14pt;
+  line-height: 1.8;
+  margin-right: 0px;
+}
+
+.questionOptions {
+  margin: 0px !important;
+  padding: 0px;
+}
+
+.testQuestion {
+  padding: 0px;
+  border-collapse: collapse;
+  font-family: "DroidSerif", "Roboto Serif", Georgia, serif;
+  font-size: 14pt;
+  margin-top: 5pt;
+  padding-bottom: 15pt;
+    font-weight: normal !important;
+  
+}
+
+.scCountDown {
+    position: absolute;
+    right: 7%;
+    top: 55%;
+}
+
+.pageText {
+  color: white;
+height: 600px !important;
+overflow-x: auto;
+}
+
+
+
+.container.scContentContainer.scContentContainerNoBorder {
+  width: 90%;
+  margin-left: 80px !important;
+}
+
+
+.page-header {
+ width: 100% !important;
+margin-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.logoWrapper {
+padding-left: 0 !important;
+}
+.
+
+.scNavigation {
+  width: 100%;
+  margin-top: 40px;
+  font-size: 16pt !important;
+  height: 100%;
+}
+
+.scProgressBar {
+  font-size: 16pt;
+}
+
+.btn {
+  font-size: 16pt !important;
+}
+
+.scPageNavigation {
+  .font-size: 16pt !important;
+}
+
+.scPageNavigation .pagination-sm > li > a {
+  border: none;
+  width: 50px !important;
+  text-align: right;
+  border-radius: 0;
+  font-size: 16pt !important;
+}
+
+body {
+  font-family: Roboto, Helvetica, Arial sans-serif !important;
+  font-size: 16pt !important;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKOzY.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKOzY.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKOzY.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKOzY.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+.fa {
+  font-size: 30pt !important;
+text-align: left !important;
+
+}
+
+.fa .numbershade[style] {
+    text-align: left !important;
+} 
+
+.pageQuestions > div > div > div:first-child {
+text-align: left !important;
+margin-left: 15px !important;
+display: inline-block:
+}
+
+.pageQuestions > div  {
+margin-left: 50px !important;
+}
+
+.pageQuestions > div >  {
+WIDTH: 100%;
+}
+
+#nextPage {
+display: inline-flex !important;
+}
+
+#previousPage {
+display: inline-flex !important;
+}
+
+.col-md-5:first-child {
+  float: left !important;
+}
+
+
+.col-md-2 {
+margin: auto !important;
+}
+
+.col-md-5:last-child {
+float: right;
+width: 25%;
+}
+
+
+.surveyNameBackground>div:last-child {
+width: 90%;
+}
+
+.surveyNameBackground>div:first-child>div:first-child {
+width: 90%;
+}
+
+#countDown {
+  padding-right: 12px;
+width: 130px;
+}
+
+#submitSurvey {
+display: inline-flex !important;
+}
+
+
+
+.btn-default:active {
+  background-color: #ffffff !important;
+border: 2px solid #2e2e2e !important;
+color: #2e2e2e !important;
+transition-duration: 0 !important;
+}
+
+.btn-default:focus {
+  background-color: #ffffff !important;
+border: 2px solid #2e2e2e !important;
+color: #2e2e2e !important;
+transition-duration: 0 !important;
+}
+
+.btn-default:visited {
+  background-color: #ffffff !important;
+border: 2px solid #2e2e2e !important;
+color: #2e2e2e !important;
+transition-duration: 0 !important;
+}
+
+.btn-default:hover {
+  background-color: #ffffff !important;
+border: 2px solid #2e2e2e !important;
+color: #2e2e2e !important;
+transition-duration: 0 !important;
+}
+
+.markReviewText {
+margin-left: 10px;
+font-family: "Roboto";
+font-size: 16pt;
+display: inline;
+}
+
+
+.questionsWithFlagsText {
+max-height: 1000px !important;
+}
+
+.numbershade>div>i:after {
+content: "    Mark for Review";
+font-family: "Roboto";
+font-size: 16pt;
+    position: relative;
+    bottom: 9px;
+    left: 10px;
+
+}
+
+.fa.fa-bookmark:after {
+content: "    Mark for Review";
+font-weight: bold;
+font-family: "Roboto";
+font-size: 16pt;
+    position: relative;
+    bottom: 9px;
+    left: 10px;
+}
+
+.fa.fa-bookmark:before {
+color:#AB2334;
+  -webkit-text-stroke: 4px #1e1e1e;
+
+}
+
+.numbershade>div>i:before {
+  -webkit-text-stroke: 1px #1e1e1e;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+
+#questionFlagsModalAll {
+display: none;
+}
+
+#questionFlagsModalUnanswered  {
+display: none;
+}
+
+#questionFlagsModalSet {
+display: none;
+}
+
+.fa.fa-bookmark-o:hover:before {
+content: "\f02e"
+  -webkit-text-stroke: 1px #1e1e1e;
+}
+
+.fa.fa-bookmark-o:hover {
+font-weight: bold;
+}
+
+
+</style>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-NE488TKSJ9&amp;l=dataLayer&amp;cx=c"></script><script>
+const list = document.getElementsByTagName("link")[0].outerHTML = "<link href=\"https:\/\/shiningrockforyou.github.io\/veteransfavicon.ico\" rel=\"shortcut icon\" type=\"image\/x-icon\">"
+document.getElementsByTagName("title")[0].outerHTML= "<title>베테랑스 Digital SAT</title>"
+</script>
+<style>
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+            <meta name="robots" content="noindex">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+
+        <link href="/Content/layoutSC?v=FiT-UK8JoWWWGVniQLWSoHf44j69ax4Nw40nttVcpPk1" rel="stylesheet">
+
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-61255730-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-61255730-2');
+        </script>
+    <script src="https://shiningrockforyou.github.io/annotator-full.min.js" type="text/javascript"></script><link rel="stylesheet" href="https://shiningrockforyou.github.io/annotator.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Serif"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"></head>
+
+
+        <style type="text/css">
+            body, html
+            {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }
+
+            #content
+            {
+                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+            }
+        </style>
+    </head>
+    <body>
+
+<iframe height="100%" width="100%" src="https://www.flexiquiz.com/black_version"></iframe>
+
+    </body>
+</html>
+
