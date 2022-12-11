@@ -1672,7 +1672,7 @@
 			return this
 		};
 		Viewer.prototype.onEditClick = function(event) {
-			if($('#currentPage').find('.annotator-hl').length = 0) {}
+			if($('#currentPage').find('.annotator-hl').length == 0) {}
 			else {
 			$('.deleteButtonPlace').css('opacity','1')
             console.log('edit click deletebutton??')
